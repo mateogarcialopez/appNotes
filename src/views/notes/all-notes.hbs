@@ -1,0 +1,21 @@
+<div class="row">
+    {{#each notesFinded}}
+    <div class="col-d-3" >
+        <div class="card-body" >
+            <h4 class="card-title d-flex justify-content-between aling-items-center">
+                {{titulo}}
+                <a href="/notes/edit/{{_id}}">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            </h4>
+            <p>{{descripcion}}</p>
+            <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                <input type="hidden" name="DELETE">
+                <button type="submit" class="btn btn-danger ntb-block btn-sm">
+                    Eliminar
+                </button>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+</div>
