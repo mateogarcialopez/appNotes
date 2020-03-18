@@ -23,7 +23,7 @@ user.signup = async (req, res) => {
         }
         if (userSaved) {
             req.flash('exito', 'El usuario se agrego correctamente');
-            res.send('usuario guardado');
+            res.render('users/signin');
         }
 
     } catch (error) {
@@ -31,11 +31,12 @@ user.signup = async (req, res) => {
     }    
 }
 
-user.renderSignInForm = (req, res) => {
+user.renderSignInForm = (req, res) => {    
     res.render('users/signin');
 }
 
 user.signin = (req, res) => {
+    
     res.render('signin');
 }
 
